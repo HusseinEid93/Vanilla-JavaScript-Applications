@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Coda+Caption:wght@800&family=Luckiest+Guy&family=Paytone+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+
+$headings-font-family: "Luckiest Guy", cursive;
+$main-font-family: "Yusei Magic", sans-serif;
+$main-color: #9ec862;
+
+// Mixins
+
+@mixin d-flex($justify-content, $align-items, $direction: row, $wrap: wrap) {
+   display: flex;
+   justify-content: $justify-content;
+   align-items: $align-items;
+   flex-direction: $direction;
+   flex-wrap: $wrap;
+}
+
+@mixin customizedScrollbar {
+   scrollbar-width: thin;
+   scrollbar-color: $main-color transparent;
+}

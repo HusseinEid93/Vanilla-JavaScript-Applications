@@ -1,0 +1,91 @@
+@import "variables";
+@import "reset";
+
+html {
+   @include customizedScrollbar;
+}
+
+body {
+   font-family: $main-font-family;
+   background-color: #7bdaf3;
+   background: linear-gradient(150deg, #ace2f1 40%, #51adc7 80%);
+   min-height: 100vh;
+   @include d-flex(flex-start, flex-start, column, wrap);
+}
+
+.add {
+   align-self: flex-end;
+   background-color: $main-color;
+   color: white;
+   padding: 0.5rem 1rem;
+   border: none;
+   outline: none;
+   border-radius: 3px;
+   font-family: inherit;
+   cursor: pointer;
+   margin: 1rem 1rem 2rem;
+   transition: background-color 0.3s;
+   &:hover {
+      background-color: darken($main-color, 10);
+   }
+}
+
+.notes-container {
+   padding: 1rem 0;
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 350px);
+   row-gap: 2rem;
+   justify-content: space-evenly;
+
+   .note {
+      background-color: white;
+      height: 350px;
+      width: 350px;
+      @include d-flex(flex-start, flex-start, column, no-wrap);
+      .tools {
+         width: 100%;
+         background-color: $main-color;
+         padding: 0.5rem;
+         @include d-flex(flex-end, center);
+         flex-grow: 1;
+         i {
+            color: white;
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+            &:hover {
+               transform: scale(1.2);
+            }
+         }
+      }
+
+      .main {
+         flex-grow: 2;
+         width: 100%;
+         height: 100%;
+         padding: 0.5rem;
+         overflow: auto;
+         @include customizedScrollbar;
+      }
+
+      textarea {
+         flex-grow: 2;
+         width: inherit;
+         height: inherit;
+         border: none;
+         resize: none;
+         padding: 1rem;
+         font-family: inherit;
+         @include customizedScrollbar;
+         &:focus {
+            outline: none;
+         }
+      }
+
+      .hidden {
+         display: none;
+      }
+   }
+}
