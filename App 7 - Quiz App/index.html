@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./css/index.css" />
+
+      <!-- Font Awesome -->
+      <script
+         src="https://kit.fontawesome.com/ 54688c9bf4.js"
+         crossorigin="anonymous"
+      ></script>
+
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      />
+
+      <link
+         rel=" stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      />
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      />
+
+      <title>Quiz App</title>
+   </head>
+   <body>
+      <div class="quiz-container">
+         <div class="quiz-header">
+            <h2 id="question"></h2>
+            <ul>
+               <li>
+                  <input type="radio" name="answer" class="choice" id="a" />
+                  <label id="answer1" for="a"></label>
+               </li>
+
+               <li>
+                  <input type="radio" name="answer" class="choice" id="b" />
+                  <label id="answer2" for="b"></label>
+               </li>
+
+               <li>
+                  <input type="radio" name="answer" class="choice" id="c" />
+                  <label id="answer3" for="c"></label>
+               </li>
+
+               <li>
+                  <input type="radio" name="answer" class="choice" id="d" />
+                  <label id="answer4" for="d"></label>
+               </li>
+            </ul>
+         </div>
+
+         <button id="submit">check answer</button>
+      </div>
+      <script src="./questions.js"></script>
+      <script src="./main.js"></script>
+   </body>
+</html>

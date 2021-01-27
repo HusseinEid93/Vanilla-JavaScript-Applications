@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lobster&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Fredoka+One&family=Lobster&family=Righteous&display=swap");
+
+$questions-font-family: "Fredoka One", cursive;
+$choices-font-family: "Righteous", cursive;
+$button-background-color: #0c5fa8;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   min-height: 100vh;
+   background-color: #0093e9;
+   background: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: $choices-font-family;
+}
+
+@mixin button($bgColor, $color, $fontSize, $padding, $d-block: false) {
+   background-color: $bgColor;
+   color: $color;
+   border: none;
+   cursor: pointer;
+   text-transform: capitalize;
+   font-size: $fontSize;
+   padding: $padding;
+}
+
+.quiz-container {
+   background-color: white;
+   box-shadow: 1px 1px 10px 2px #357ab7;
+   width: 600px;
+   border-radius: 10px;
+   overflow: hidden;
+   .quiz-header {
+      padding: 3.5rem;
+      h2 {
+         font-size: 1.5rem;
+         margin-bottom: 1.5rem;
+         font-family: $questions-font-family;
+      }
+      ul {
+         list-style: none;
+      }
+      li {
+         font-size: 1.2rem;
+         margin-bottom: 1rem;
+         display: flex;
+         align-items: center;
+         &:last-of-type {
+            margin-bottom: 0;
+         }
+      }
+      input {
+         margin-right: 0.5rem;
+         appearance: none;
+         background-color: #f7f7f7;
+         width: 0.75rem;
+         height: 0.75rem;
+         padding: 0.75rem;
+         border-radius: 50%;
+         border: 1px solid #9dc1ea;
+         position: relative;
+         cursor: pointer;
+         &:checked {
+            background-color: #357ab7;
+            border: 1px solid #357ab7;
+            &::after {
+               content: "\2714";
+               color: #fff;
+               font-size: 1rem;
+               font-weight: bold;
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+            }
+         }
+         & + label {
+            cursor: pointer;
+         }
+      }
+   }
+   button {
+      @include button(
+         lighten($button-background-color, 30),
+         white,
+         1.5rem,
+         2rem,
+         true
+      );
+      display: block;
+      width: 100%;
+      transition: background-color 0.25s;
+      cursor: no-drop;
+      &.active {
+         background-color: $button-background-color !important;
+         cursor: pointer !important;
+      }
+   }
+   .final {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      text-align: center;
+      i {
+         color: rgb(85, 185, 85);
+      }
+      h1 {
+         margin: 1rem 0;
+         font-size: 3rem;
+         font-family: $questions-font-family;
+      }
+      p {
+         font-size: 1.5rem;
+         margin-bottom: 2rem;
+         font-weight: 400;
+      }
+      span {
+         color: $button-background-color;
+         font-size: 2rem;
+      }
+      button {
+         @include button($button-background-color, white, 1.2rem, 1rem, true);
+         width: 70%;
+         transition: background-color 0.25s;
+         &:hover {
+            background-color: darken($button-background-color, 10);
+         }
+      }
+   }
+}
