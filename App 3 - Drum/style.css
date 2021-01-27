@@ -1,0 +1,95 @@
+* {
+   box-sizing: border-box;
+}
+body {
+   margin: 0;
+   padding: 0;
+   min-height: 100vh;
+   background: url("media/photo1.jpg");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+.boxes {
+   width: 90%;
+   min-height: 100vh;
+   margin-left: auto;
+   margin-right: auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   align-items: center;
+   align-content: center;
+}
+
+.box {
+   margin: 20px;
+   flex-basis: 150px;
+   height: 150px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   border: 5px solid #f4ac5b;
+   border-radius: 20px;
+   padding: 10px 0;
+   /* transition: border-color 0.07s ease, transform 0.07s ease,
+      box-shadow 0.07s ease; */
+   text-align: center;
+   color: white;
+   background: rgba(0, 0, 0, 0.7);
+   padding: 1rem;
+}
+.box h1 {
+   font-size: 3rem;
+   margin: 0;
+   font-family: "Anton", sans-serif;
+}
+.box .sound {
+   text-transform: uppercase;
+   font-weight: bold;
+   letter-spacing: 0.1em;
+   color: #ffc600;
+   font-family: "Montserrat", sans-serif;
+}
+.box.active {
+   border-color: #ffc600;
+   transform: scale(1.1);
+   box-shadow: 5px 5px 3px #f00, -5px -5px 3px #f00, 5px -5px 3px #f00,
+      -5px 5px 3px #f00;
+}
+
+h1.active {
+   color: #ffc600;
+   text-shadow: 3px 3px #f00;
+}
+.sound.active {
+   color: rgb(245, 61, 61);
+}
+
+/* ############################################# */
+/* Media Queries */
+@media (min-width: 576px) and (max-width: 767px) {
+   .box {
+      margin: 20px;
+      flex-basis: 120px;
+      height: 120px;
+   }
+   .box h1 {
+      font-size: 2rem;
+   }
+}
+
+@media (max-width: 575px) {
+   .box {
+      margin: 15px;
+      flex-basis: 100px;
+      height: 100px;
+   }
+   .box h1 {
+      font-size: 1.75rem;
+   }
+   .box .sound {
+      font-size: 0.6rem;
+   }
+}
