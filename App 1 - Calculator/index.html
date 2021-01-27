@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <!-- Font awesome -->
+      <script
+         src="https://kit.fontawesome.com/ 54688c9bf4.js"
+         crossorigin="anonymous"
+      ></script>
+
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      />
+
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      />
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      />
+      <!-- -------------------------------------- -->
+
+      <!-- Google fonts -->
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+         rel="stylesheet"
+      />
+      <!-- ------------------------------------- -->
+
+      <link rel="stylesheet" href="./style.css" />
+      <title>Calculator</title>
+   </head>
+   <body>
+      <div class="calculator">
+         <div class="output">
+            <div data-previous-operand class="previous-operand"></div>
+
+            <div data-current-operand class="current-operand"></div>
+         </div>
+
+         <div class="grid">
+            <div class="row1">
+               <button data-all-clear>AC</button>
+               <button data-delete>del</button>
+
+               <button data-operation="/" data-value="÷">
+                  <i class="fas fa-divide fa-1x"></i>
+               </button>
+            </div>
+
+            <div class="row2">
+               <button data-number="1">1</button>
+               <button data-number="2">2</button>
+               <button data-number="3">3</button>
+               <button data-operation="*" data-value="*">
+                  <i class="fas fa-times fa-1x"></i>
+               </button>
+            </div>
+
+            <div class="row3">
+               <button data-number="4">4</button>
+               <button data-number="5">5</button>
+               <button data-number="6">6</button>
+               <button data-operation="+" data-value="+">
+                  <i class="fas fa-plus fa-1x"></i>
+               </button>
+            </div>
+
+            <div class="row4">
+               <button data-number="7">7</button>
+               <button data-number="8">8</button>
+               <button data-number="9">9</button>
+               <button data-operation="-" data-value="-">
+                  <i class="fas fa-minus fa-1x"></i>
+               </button>
+            </div>
+
+            <div class="row5">
+               <button data-number=".">.</button>
+               <button data-number="0">0</button>
+               <button data-equals data-value="=">
+                  <i class="fas fa-equals fa-1x"></i>
+               </button>
+            </div>
+         </div>
+      </div>
+
+      <script src="./script.js"></script>
+   </body>
+</html>
