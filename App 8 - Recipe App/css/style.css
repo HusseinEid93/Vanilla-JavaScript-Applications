@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Coda+Caption:wght@800&family=Luckiest+Guy&family=Paytone+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #6464f1 transparent;
+}
+
+body {
+  background: #ece9e6;
+  background: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ece9e6));
+  background: linear-gradient(to right, #ffffff, #ece9e6);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  font-family: "Yusei Magic", sans-serif;
+}
+
+.mobile-container {
+  background-color: white;
+  width: 400px;
+  max-height: 90vh;
+  -webkit-box-shadow: 0 0 10px 2px #3333331a;
+          box-shadow: 0 0 10px 2px #3333331a;
+  border-radius: 3px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.mobile-container img {
+  max-width: 100%;
+}
+
+.mobile-container header {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+}
+
+.mobile-container header input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  border: none;
+  background-color: #efefef;
+  border: 2px solid #efefef;
+  -webkit-transition: border-color 0.25s ease-in-out;
+  transition: border-color 0.25s ease-in-out;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.mobile-container header input:focus {
+  border: 2px solid #a5a1a1;
+}
+
+.mobile-container header button {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  background-color: transparent;
+  color: #aaa;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.mobile-container .fav-container {
+  background-color: #e8edf7;
+  padding: 1rem;
+  text-align: center;
+}
+
+.mobile-container .fav-container h2 {
+  font-family: "Luckiest Guy", cursive;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.mobile-container .fav-container .fav-meals {
+  list-style-type: none;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(75px, auto);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 0.5rem;
+  overflow: auto;
+  padding: 0.8rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #6464f1 transparent;
+}
+
+.mobile-container .fav-container .fav-meals li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  width: 75px;
+  font-size: 0.75rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.mobile-container .fav-container .fav-meals li img {
+  border: 2px solid white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.mobile-container .fav-container .fav-meals li span {
+  line-height: 1.4;
+}
+
+.mobile-container .fav-container .fav-meals li i.clear {
+  font-size: 1rem;
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.mobile-container .fav-container .fav-meals li:hover i.clear {
+  opacity: 1;
+}
+
+.mobile-container .meals {
+  margin: 1.5rem;
+}
+
+.mobile-container .meals .meal {
+  -webkit-box-shadow: 0 0 10px 2px #3333331a;
+          box-shadow: 0 0 10px 2px #3333331a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.mobile-container .meals .meal-header {
+  position: relative;
+  cursor: pointer;
+}
+
+.mobile-container .meals .meal-header .random {
+  position: absolute;
+  top: 1rem;
+  background-color: white;
+  padding: 0.25rem;
+  border-radius: 0 3px 3px 0;
+}
+
+.mobile-container .meals .meal-header img {
+  display: block;
+  height: 200px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mobile-container .meals .meal-header .next-arrow, .mobile-container .meals .meal-header .previous-arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  width: 30px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.5rem;
+}
+
+.mobile-container .meals .meal-header .next-arrow {
+  right: 0.25rem;
+}
+
+.mobile-container .meals .meal-header .previous-arrow {
+  left: 0.25rem;
+}
+
+.mobile-container .meals .meal-header .previous-arrow.no-back {
+  cursor: no-drop;
+}
+
+.mobile-container .meals .meal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  padding: 1rem;
+}
+
+.mobile-container .meals .meal-footer h4 {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.mobile-container .meals .meal-footer .fav-btn {
+  display: block;
+  margin-left: 1rem;
+  color: #c5bcbc;
+  cursor: pointer;
+}
+
+.mobile-container .meals .meal-footer .fav-btn.active {
+  color: #e04646;
+}
+
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+
+.popup-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup-container .popup {
+  padding: 2rem 2rem 0 2rem;
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  height: 550px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #6464f1 transparent;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.popup-container .popup #close-popup {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+.popup-container .popup h1 {
+  font-family: "Luckiest Guy", cursive;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.popup-container .popup img {
+  display: block;
+  width: 100%;
+  height: 450px;
+  margin-bottom: 1rem;
+}
+
+.popup-container .popup h2 {
+  margin: 1rem 0;
+}
+
+.popup-container .popup ul {
+  list-style-type: none;
+  margin: 1rem 0 2rem 0;
+}
+
+.popup-container .popup ul li {
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+}
+
+.popup-container .popup ul li::before {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  color: #1414db;
+}

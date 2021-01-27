@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Coda+Caption:wght@800&family=Luckiest+Guy&family=Paytone+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+
+$headings-font-family: "Luckiest Guy", cursive;
+$text-font-family: "Yusei Magic", sans-serif;
+$blueish-color: rgb(100, 100, 241);
+
+// Mixins
+@mixin d-flex($justify-content, $align-items, $direction: row, $wrap: no-wrap) {
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $justify-content;
+   align-items: $align-items;
+   flex-wrap: $wrap;
+}
+
+@mixin customize-scrollbar {
+   scrollbar-width: thin;
+   scrollbar-color: $blueish-color transparent;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   @include customize-scrollbar;
+}
+
+body {
+   background: #ece9e6;
+   background: linear-gradient(to right, #ffffff, #ece9e6);
+   min-height: 100vh;
+   @include d-flex(center, center);
+   font-family: $text-font-family;
+}
+
+.mobile-container {
+   background-color: white;
+   width: 400px;
+   max-height: 90vh;
+   box-shadow: 0 0 10px 2px #3333331a;
+   border-radius: 3px;
+   overflow: auto;
+   scrollbar-width: thin;
+   img {
+      max-width: 100%;
+   }
+   header {
+      padding: 1rem;
+      @include d-flex(center, center);
+      input {
+         flex-grow: 1;
+         padding: 0.5rem 1rem;
+         border-radius: 3px;
+         border: none;
+         background-color: #efefef;
+         border: 2px solid #efefef;
+         transition: border-color 0.25s ease-in-out;
+         font-family: inherit;
+         font-size: 1rem;
+         &:focus {
+            border: 2px solid #a5a1a1;
+         }
+      }
+      button {
+         flex-grow: 0;
+         background-color: transparent;
+         color: #aaa;
+         border: none;
+         font-size: 1.5rem;
+         margin-left: 10px;
+         cursor: pointer;
+      }
+   }
+
+   .fav-container {
+      background-color: rgb(232, 237, 247);
+      padding: 1rem;
+      text-align: center;
+      h2 {
+         font-family: $headings-font-family;
+         text-transform: uppercase;
+         letter-spacing: 3px;
+      }
+      .fav-meals {
+         list-style-type: none;
+         display: grid;
+         grid-auto-flow: column;
+         grid-auto-columns: minmax(75px, auto);
+         justify-content: start;
+         align-items: start;
+         gap: 0.5rem;
+         overflow: auto;
+         padding: 0.8rem 0;
+         @include customize-scrollbar;
+         li {
+            @include d-flex(flex-start, center, column);
+            width: 75px;
+            font-size: 0.75rem;
+            position: relative;
+            cursor: pointer;
+            img {
+               border: 2px solid white;
+               width: 70px;
+               height: 70px;
+               border-radius: 50%;
+            }
+            span {
+               line-height: 1.4;
+            }
+            i.clear {
+               font-size: 1rem;
+               position: absolute;
+               right: -8px;
+               top: -8px;
+               opacity: 0;
+               transition: opacity 0.3s;
+            }
+
+            &:hover i.clear {
+               opacity: 1;
+            }
+         }
+      }
+   }
+
+   .meals {
+      margin: 1.5rem;
+      .meal {
+         box-shadow: 0 0 10px 2px #3333331a;
+         border-radius: 3px;
+         overflow: hidden;
+         &-header {
+            position: relative;
+            cursor: pointer;
+            .random {
+               position: absolute;
+               top: 1rem;
+               background-color: white;
+               padding: 0.25rem;
+               border-radius: 0 3px 3px 0;
+            }
+            img {
+               display: block;
+               height: 200px;
+               width: 100%;
+               object-fit: cover;
+            }
+
+            %next-previous-arrows {
+               @include d-flex(center, center);
+               width: 30px;
+               height: 35px;
+               background-color: rgba(255, 255, 255, 0.7);
+               color: black;
+               position: absolute;
+               top: 50%;
+               transform: translateY(-50%);
+               font-size: 1.5rem;
+            }
+
+            .next-arrow {
+               @extend %next-previous-arrows;
+               right: 0.25rem;
+            }
+            .previous-arrow {
+               @extend %next-previous-arrows;
+               left: 0.25rem;
+               &.no-back {
+                  cursor: no-drop;
+               }
+            }
+         }
+
+         &-footer {
+            @include d-flex(space-between, center);
+            padding: 1rem;
+            h4 {
+               flex-grow: 1;
+            }
+            .fav-btn {
+               display: block;
+               margin-left: 1rem;
+               color: rgb(197, 188, 188);
+               cursor: pointer;
+               &.active {
+                  color: rgb(224, 70, 70);
+               }
+            }
+         }
+      }
+   }
+}
+
+.popup-container {
+   background-color: rgba(0, 0, 0, 0.5);
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   @include d-flex(center, center, column);
+   transition: opacity 0.25s;
+   &.hidden {
+      opacity: 0;
+      pointer-events: none;
+   }
+   .popup {
+      padding: 2rem 2rem 0 2rem;
+      background-color: white;
+      width: 100%;
+      max-width: 600px;
+      height: 550px;
+      overflow: auto;
+      @include customize-scrollbar;
+      font-size: 0.9rem;
+      position: relative;
+      #close-popup {
+         position: absolute;
+         top: 1rem;
+         right: 2rem;
+         cursor: pointer;
+      }
+      h1 {
+         font-family: $headings-font-family;
+         text-align: center;
+         letter-spacing: 3px;
+         margin-bottom: 1.5rem;
+      }
+      img {
+         display: block;
+         width: 100%;
+         height: 450px;
+         margin-bottom: 1rem;
+      }
+      h2 {
+         margin: 1rem 0;
+      }
+      ul {
+         list-style-type: none;
+         margin: 1rem 0 2rem 0;
+         li {
+            margin-bottom: 0.25rem;
+            @include d-flex(flex-start, center);
+            &::before {
+               content: "\f058";
+               font-family: "Font Awesome 5 Free";
+               margin-right: 0.5rem;
+               font-size: 1rem;
+               color: darken($blueish-color, 20);
+            }
+         }
+      }
+   }
+}

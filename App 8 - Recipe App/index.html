@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- Font Awesome -->
+      <script
+         src="https://kit.fontawesome.com/ 54688c9bf4.js"
+         crossorigin="anonymous"
+      ></script>
+
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      />
+
+      <link
+         rel=" stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      />
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      />
+      <link rel="stylesheet" href="./css/style.css" />
+      <title>Recipe App</title>
+   </head>
+   <body>
+      <div class="mobile-container">
+         <header>
+            <input
+               type="text"
+               id="search-term"
+               placeholder="Type and click search"
+            />
+            <button id="search" title="Search">
+               <i class="fas fa-search"></i>
+            </button>
+         </header>
+         <!-- ################################## -->
+
+         <div class="fav-container">
+            <h2>Favorite meals</h2>
+            <ul class="fav-meals"></ul>
+         </div>
+         <!-- ################################# -->
+
+         <div class="meals"></div>
+      </div>
+
+      <div class="popup-container hidden">
+         <div class="popup">
+            <i class="fas fa-times fa-2x" id="close-popup" title="Close"></i>
+
+            <div id="meal-info"></div>
+         </div>
+      </div>
+
+      <script src="./script.js"></script>
+   </body>
+</html>
