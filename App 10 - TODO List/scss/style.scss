@@ -1,0 +1,111 @@
+@import "variables";
+
+//Reset
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: $main-font-family;
+   background-color: $main-color;
+}
+
+h1 {
+   font-size: 6rem;
+   text-align: center;
+   color: lighten($purple, 17);
+   font-family: $headings-font-family;
+   letter-spacing: 2px;
+}
+
+.container {
+   width: 400px;
+   max-width: 100%;
+   margin: auto;
+   box-shadow: 0 4px 10px darken($main-color, 20);
+   form {
+      > input {
+         display: block;
+         width: 100%;
+         padding: 1rem 2rem;
+         outline: none;
+         font-family: inherit;
+         font-size: 1.3rem;
+         border-radius: 5px;
+         border: none;
+         transition: all 0.3s;
+         &:focus {
+            outline: none;
+         }
+         &::placeholder {
+            color: darken($main-color, 40);
+         }
+      }
+   }
+
+   .todos {
+      background-color: white;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      .wrapper {
+         @include d-flex(flex-start, center, row, no-wrap);
+         border-top: 1px solid #e5e5e5;
+         padding: 1rem 2rem;
+         font-size: 1.3rem;
+         input {
+            flex-shrink: 0;
+            @include d-flex(center, center, row, no-wrap);
+            height: 1.2rem;
+            width: 1.2rem;
+            appearance: none;
+            border-radius: 3px;
+            border: 2px solid $purple;
+            position: relative;
+            transition: all 0.3s;
+            cursor: pointer;
+            &:checked {
+               @include checkBox;
+            }
+            &.checked {
+               @include checkBox;
+            }
+         }
+
+         li {
+            word-wrap: break-word;
+            word-break: break-all;
+            font-size: 0.95rem;
+            flex-grow: 2;
+            margin: 0 1rem;
+            &.done {
+               color: #999;
+               text-decoration-line: line-through;
+               text-decoration-color: rgb(199, 72, 72);
+            }
+         }
+         i.close {
+            opacity: 0;
+            transition: opacity 0.3s;
+            cursor: pointer;
+         }
+         &:hover i.close {
+            opacity: 1;
+         }
+      }
+   }
+}
+
+.instructions {
+   width: 400px;
+   max-width: 100%;
+   margin: 4rem auto;
+   text-align: left;
+   font-size: smaller;
+   color: darken($main-color, 40);
+   small {
+      display: block;
+   }
+}

@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Londrina+Solid&family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Yusei Magic", sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  font-size: 6rem;
+  text-align: center;
+  color: #e0b9e0;
+  font-family: "Luckiest Guy", cursive;
+  letter-spacing: 2px;
+}
+
+.container {
+  width: 400px;
+  max-width: 100%;
+  margin: auto;
+  -webkit-box-shadow: 0 4px 10px #c2c2c2;
+          box-shadow: 0 4px 10px #c2c2c2;
+}
+
+.container form > input {
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  outline: none;
+  font-family: inherit;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.container form > input:focus {
+  outline: none;
+}
+
+.container form > input::-webkit-input-placeholder {
+  color: #8f8f8f;
+}
+
+.container form > input:-ms-input-placeholder {
+  color: #8f8f8f;
+}
+
+.container form > input::-ms-input-placeholder {
+  color: #8f8f8f;
+}
+
+.container form > input::placeholder {
+  color: #8f8f8f;
+}
+
+.container .todos {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.container .todos .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  border-top: 1px solid #e5e5e5;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+}
+
+.container .todos .wrapper input {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  height: 1.2rem;
+  width: 1.2rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 3px;
+  border: 2px solid #c57dc5;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.container .todos .wrapper input:checked {
+  background-color: #c57dc5;
+}
+
+.container .todos .wrapper input:checked::after {
+  content: "\2714";
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+}
+
+.container .todos .wrapper input.checked {
+  background-color: #c57dc5;
+}
+
+.container .todos .wrapper input.checked::after {
+  content: "\2714";
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+}
+
+.container .todos .wrapper li {
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 0.95rem;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  margin: 0 1rem;
+}
+
+.container .todos .wrapper li.done {
+  color: #999;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  -webkit-text-decoration-color: #c74848;
+          text-decoration-color: #c74848;
+}
+
+.container .todos .wrapper i.close {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.container .todos .wrapper:hover i.close {
+  opacity: 1;
+}
+
+.instructions {
+  width: 400px;
+  max-width: 100%;
+  margin: 4rem auto;
+  text-align: left;
+  font-size: smaller;
+  color: #8f8f8f;
+}
+
+.instructions small {
+  display: block;
+}
