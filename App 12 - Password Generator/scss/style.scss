@@ -1,0 +1,135 @@
+@import "variables";
+@import "utilities";
+
+// Reset
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: $main-font-family;
+   background-color: $main-color;
+   color: white;
+   min-height: 100vh;
+   @include d-flex(center, center);
+}
+
+.container {
+   > h2 {
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: white;
+      font-family: $heading-font-family;
+      text-align: center;
+   }
+
+   width: 400px;
+   background-color: darken($main-color, 15);
+   padding: 1rem;
+   @include d-grid(2rem);
+   border-radius: 10px;
+   .header {
+      min-height: 50px;
+      @include d-grid(1rem, auto max-content);
+      font-family: $password-font-family;
+      p {
+         @include d-flex(flex-start, center);
+         background-color: $main-color;
+         font-size: 1.2rem;
+         height: auto;
+         word-wrap: break-word;
+         word-break: break-all;
+         padding: 0.5rem;
+         letter-spacing: 1px;
+      }
+
+      i {
+         font-size: 1.5rem;
+         align-self: center;
+         color: white;
+         cursor: pointer;
+      }
+   }
+
+   .body {
+      @include d-grid(0.5rem);
+      .password-control {
+         @include d-flex(space-between, center);
+         label {
+            cursor: pointer;
+         }
+
+         .number {
+            padding: 0 0.25rem;
+            width: 70px;
+            background-color: white;
+            color: $main-color;
+            @include d-flex(space-evenly, center);
+            font-weight: bold;
+            input {
+               width: 60%;
+               border: none;
+               text-align: center;
+               font-family: inherit;
+               font-weight: bold;
+               font-size: 1rem;
+               color: $main-color;
+               &:focus {
+                  outline: none;
+               }
+            }
+            i {
+               font-size: 1rem;
+               cursor: pointer;
+               color: darken($main-color, 15);
+            }
+         }
+
+         label {
+            text-transform: capitalize;
+         }
+
+         input[type="checkbox"] {
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid #df6589ff;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+            &:checked::after {
+               content: "\2714";
+               color: $main-color;
+               font-size: 1.2rem;
+               font-weight: bold;
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+            }
+            &:focus {
+               outline: none;
+            }
+         }
+      }
+   }
+
+   .generate {
+      display: block;
+      width: max-content;
+      margin: 0 auto;
+      background-color: #f0df9d;
+      color: darken($main-color, 10);
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+      font: {
+         family: inherit;
+         size: 1.1rem;
+         weight: bold;
+      }
+   }
+}

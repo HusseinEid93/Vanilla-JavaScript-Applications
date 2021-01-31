@@ -1,0 +1,19 @@
+// Mixins
+@mixin d-flex(
+   $justify-content: flex-start,
+   $align-items: flex-start,
+   $direction: row,
+   $wrap: no-wrap
+) {
+   display: flex;
+   justify-content: $justify-content;
+   align-items: $align-items;
+   flex-direction: $direction;
+   flex-wrap: $wrap;
+}
+
+@mixin d-grid($gap: 1rem, $grid-template-columns: none) {
+   display: grid;
+   gap: $gap;
+   grid-template-columns: $grid-template-columns;
+}

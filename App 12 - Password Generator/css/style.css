@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Londrina+Solid&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Yusei Magic", sans-serif;
+  background-color: rebeccapurple;
+  color: white;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+}
+
+.container {
+  width: 400px;
+  background-color: #402060;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  -ms-grid-columns: none;
+      grid-template-columns: none;
+  border-radius: 10px;
+}
+
+.container > h2 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Anton", sans-serif;
+  text-align: center;
+}
+
+.container .header {
+  min-height: 50px;
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: auto max-content;
+      grid-template-columns: auto -webkit-max-content;
+      grid-template-columns: auto max-content;
+  font-family: "Fredoka One", cursive;
+}
+
+.container .header p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  background-color: rebeccapurple;
+  font-size: 1.2rem;
+  height: auto;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.container .header i {
+  font-size: 1.5rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: white;
+  cursor: pointer;
+}
+
+.container .body {
+  display: -ms-grid;
+  display: grid;
+  gap: 0.5rem;
+  -ms-grid-columns: none;
+      grid-template-columns: none;
+}
+
+.container .body .password-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+}
+
+.container .body .password-control label {
+  cursor: pointer;
+}
+
+.container .body .password-control .number {
+  padding: 0 0.25rem;
+  width: 70px;
+  background-color: white;
+  color: rebeccapurple;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  font-weight: bold;
+}
+
+.container .body .password-control .number input {
+  width: 60%;
+  border: none;
+  text-align: center;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  color: rebeccapurple;
+}
+
+.container .body .password-control .number input:focus {
+  outline: none;
+}
+
+.container .body .password-control .number i {
+  font-size: 1rem;
+  cursor: pointer;
+  color: #402060;
+}
+
+.container .body .password-control label {
+  text-transform: capitalize;
+}
+
+.container .body .password-control input[type="checkbox"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #df6589ff;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.container .body .password-control input[type="checkbox"]:checked::after {
+  content: "\2714";
+  color: rebeccapurple;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.container .body .password-control input[type="checkbox"]:focus {
+  outline: none;
+}
+
+.container .generate {
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  background-color: #f0df9d;
+  color: #4d2673;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+}

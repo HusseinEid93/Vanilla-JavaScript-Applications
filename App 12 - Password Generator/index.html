@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <!-- Font Awesome -->
+      <script
+         src="https://kit.fontawesome.com/ 54688c9bf4.js"
+         crossorigin="anonymous"
+      ></script>
+
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      />
+
+      <link
+         rel=" stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      />
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      />
+
+      <link rel="stylesheet" href="./css/style.css" />
+      <title>Password Generator</title>
+   </head>
+   <body>
+      <div class="container">
+         <h2>password generator</h2>
+
+         <div class="header">
+            <p id="password"></p>
+
+            <i class="far fa-clipboard" id="copy"></i>
+         </div>
+
+         <div class="body">
+            <div class="password-control">
+               <label>password length</label>
+               <div class="number">
+                  <i class="fas fa-chevron-down" id="down"></i>
+                  <input type="text" value="4" id="password-length" />
+                  <i class="fas fa-chevron-up" id="up"></i>
+               </div>
+            </div>
+
+            <div class="password-control">
+               <label for="upper">contains uppercase letters</label>
+               <input type="checkbox" id="upper" />
+            </div>
+
+            <div class="password-control">
+               <label for="lower">contains lowercase letters</label>
+               <input type="checkbox" id="lower" />
+            </div>
+
+            <div class="password-control">
+               <label for="number">contains numbers</label>
+               <input type="checkbox" id="number" />
+            </div>
+
+            <div class="password-control">
+               <label for="symbol">contains symbol</label>
+               <input type="checkbox" id="symbol" />
+            </div>
+         </div>
+
+         <button class="generate">Generate Password</button>
+      </div>
+      <script src="./script.js"></script>
+   </body>
+</html>
