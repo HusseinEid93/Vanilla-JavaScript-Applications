@@ -9,6 +9,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Yusei Magic", sans-serif;
   background-color: rebeccapurple;
   color: white;
@@ -28,6 +29,7 @@ body {
           flex-direction: row;
   -ms-flex-wrap: no-wrap;
       flex-wrap: no-wrap;
+  position: relative;
 }
 
 .container {
@@ -215,4 +217,66 @@ body {
   font-family: inherit;
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+.popup {
+  position: absolute;
+  right: 0;
+  top: 5rem;
+  color: white;
+  padding: 1rem;
+  background-color: #402060;
+  border-radius: 10px 0 0 10px;
+  font-weight: bold;
+}
+
+.popup.hide {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+}
+
+.popup.show {
+  -webkit-animation: animate 3s ease-in-out;
+          animation: animate 3s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+  }
+  10%,
+  90% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+  }
+  10%,
+  90% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+  }
 }

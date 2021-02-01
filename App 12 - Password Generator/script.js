@@ -8,6 +8,7 @@ const lowerElement = document.getElementById('lower');
 const numberElement = document.getElementById('number');
 const symbolElement = document.getElementById('symbol');
 const generateBtnElement = document.querySelector('button.generate');
+const popup = document.querySelector('.popup');
 
 
 // Define all constants 
@@ -134,3 +135,17 @@ function copyPassword() {
 }
 
 copyElement.addEventListener('click', copyPassword);
+
+
+copyElement.addEventListener('click', () => {
+   const password = passwordElement.innerText;
+   if (password) {
+      popup.classList.remove('hide');
+      popup.classList.add('show');
+   }
+});
+
+generateBtnElement.addEventListener('click', () => {
+   popup.classList.remove('show');
+   popup.classList.add('hide');
+});

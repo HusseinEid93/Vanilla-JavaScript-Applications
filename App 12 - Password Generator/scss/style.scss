@@ -9,11 +9,13 @@
 }
 
 body {
+   overflow-x: hidden;
    font-family: $main-font-family;
    background-color: $main-color;
    color: white;
    min-height: 100vh;
    @include d-flex(center, center);
+   position: relative;
 }
 
 .container {
@@ -130,6 +132,42 @@ body {
          family: inherit;
          size: 1.1rem;
          weight: bold;
+      }
+   }
+}
+
+.popup {
+   position: absolute;
+   right: 0;
+   top: 5rem;
+   color: white;
+   padding: 1rem;
+   background-color: darken($main-color, 15);
+   border-radius: 10px 0 0 10px;
+   font-weight: bold;
+
+   &.hide {
+      transform: translateX(100%);
+      opacity: 0;
+   }
+
+   &.show {
+      animation: animate 3s ease-in-out;
+      animation-fill-mode: forwards;
+      @keyframes animate {
+         0% {
+            transform: translateX(100%);
+            opacity: 0;
+         }
+         10%,
+         90% {
+            transform: translateX(0);
+            opacity: 1;
+         }
+         100% {
+            transform: translateX(100%);
+            opacity: 0;
+         }
       }
    }
 }
