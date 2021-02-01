@@ -1,0 +1,71 @@
+@import "variables", "utilities";
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   @include d-flex(center, center, column);
+   background: #ad5389;
+   background: linear-gradient(to right, $main-color, #ad5389);
+   min-height: 100vh;
+   font-family: $main-font-family;
+}
+
+.container {
+   width: 400px;
+   max-width: 100%;
+   @include d-flex(center, center, column);
+   padding: 2rem;
+   background-color: rgba(255, 255, 255, 0.2);
+   border-radius: 10px;
+
+   input {
+      color: lighten($main-color, 15);
+      width: 300px;
+      font: {
+         size: 1.5rem;
+         family: $city-font-family;
+         weight: bold;
+      }
+      background-color: white;
+      border: none;
+      border-radius: 40px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      &:focus {
+         outline: none;
+      }
+      &::placeholder {
+         font: {
+            size: 1.5rem;
+            family: $heading-font-family;
+         }
+         opacity: 0.4;
+      }
+   }
+
+   .weather {
+      margin-top: 1rem;
+      text-align: center;
+      color: white;
+      @include d-flex(center, center, column);
+
+      section.temperature {
+         @include d-grid(2rem, auto auto);
+         align-items: center;
+         h2 {
+            font: {
+               family: $heading-font-family;
+               size: 3rem;
+            }
+         }
+      }
+
+      p {
+         font-family: $city-font-family;
+         font-size: 1.5rem;
+      }
+   }
+}

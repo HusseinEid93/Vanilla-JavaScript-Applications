@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gorditas:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  background: #ad5389;
+  background: -webkit-gradient(linear, left top, right top, from(#3c1053), to(#ad5389));
+  background: linear-gradient(to right, #3c1053, #ad5389);
+  min-height: 100vh;
+  font-family: "Yusei Magic", sans-serif;
+}
+
+.container {
+  width: 400px;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.container input {
+  color: #6a1c93;
+  width: 300px;
+  font-size: 1.5rem;
+  font-family: "Fredoka One", cursive;
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 1rem;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container input:focus {
+  outline: none;
+}
+
+.container input::-webkit-input-placeholder {
+  font-size: 1.5rem;
+  font-family: "Anton", sans-serif;
+  opacity: 0.4;
+}
+
+.container input:-ms-input-placeholder {
+  font-size: 1.5rem;
+  font-family: "Anton", sans-serif;
+  opacity: 0.4;
+}
+
+.container input::-ms-input-placeholder {
+  font-size: 1.5rem;
+  font-family: "Anton", sans-serif;
+  opacity: 0.4;
+}
+
+.container input::placeholder {
+  font-size: 1.5rem;
+  font-family: "Anton", sans-serif;
+  opacity: 0.4;
+}
+
+.container .weather {
+  margin-top: 1rem;
+  text-align: center;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+}
+
+.container .weather section.temperature {
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .weather section.temperature h2 {
+  font-family: "Anton", sans-serif;
+  font-size: 3rem;
+}
+
+.container .weather p {
+  font-family: "Fredoka One", cursive;
+  font-size: 1.5rem;
+}
