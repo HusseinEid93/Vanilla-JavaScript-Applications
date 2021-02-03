@@ -1,0 +1,139 @@
+@import "variables", "utilities";
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html {
+   @include customizedScrollBar;
+}
+
+body {
+   background-color: $main-color;
+   font-family: $main-font-family;
+   min-height: 100vh;
+   padding: 2rem 0;
+   position: relative;
+   @include d-grid(auto, 2rem, stretch);
+   @include customizedScrollBar;
+
+   .next {
+      @include pagination(right);
+   }
+   .previous {
+      @include pagination(left);
+   }
+}
+
+header {
+   @include d-flex(flex-end, center);
+   background-color: $lightened-color;
+   padding: 1.5rem;
+   input {
+      @include font(1rem);
+      letter-spacing: 1px;
+      border-radius: 50px;
+      width: 250px;
+      color: $lightened-color;
+      padding: 0.5rem 1rem;
+      background-color: white;
+      border: 2px solid $lightened-color;
+      transition: border 0.5s;
+      &:focus {
+         outline: none;
+         border: 2px solid lighten($main-color, 60);
+      }
+      &::placeholder {
+         font-weight: bold;
+      }
+   }
+}
+
+main {
+   @include d-grid(repeat(auto-fit, 300px), 1.5rem, center);
+
+   .movie {
+      position: relative;
+      background-color: $lightened-color;
+      color: white;
+      width: 300px;
+      height: 450px;
+      border-radius: 3px;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      .image {
+         height: 80%;
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+      .movie-info {
+         position: relative;
+         height: 20%;
+         padding: 0.5rem;
+         @include d-flex(space-between, center);
+         h2 {
+            @include h2-basic-style;
+         }
+         span {
+            background-color: $main-color;
+            padding: 0.3rem;
+            font-weight: bold;
+            border-radius: 3px;
+            &.green {
+               color: lighten(green, 10);
+            }
+            &.orange {
+               color: lighten(orange, 10);
+            }
+            &.red {
+               color: lighten(red, 10);
+            }
+         }
+
+         i.fa-chevron-up {
+            @include chevron-up-down(17px, bottom, 5px, white);
+         }
+      }
+
+      .overview {
+         > h2 {
+            @include h2-basic-style;
+            text-align: center;
+            color: $main-color;
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+         }
+         > h4 {
+            margin-top: 0.5rem;
+            align-self: flex-start;
+         }
+         max-height: 100%;
+         overflow: auto;
+         position: absolute;
+         right: 0;
+         left: 0;
+         bottom: 0;
+         @include d-flex(center, center, column, no-wrap);
+         background-color: rgba(255, 255, 255, 0.8);
+         color: $main-color;
+         padding: 1rem;
+         @include font(small, bold);
+         transition: transform 0.5s;
+         @include customizedScrollBar;
+         &.hide {
+            transform: translateY(100%);
+         }
+         &.show {
+            transform: translateY(0);
+         }
+
+         i.fa-chevron-down {
+            @include chevron-up-down(1rem, top, 1rem, $main-color);
+         }
+      }
+   }
+}

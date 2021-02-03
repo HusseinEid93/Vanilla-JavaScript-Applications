@@ -1,0 +1,24 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Carter+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+// Variables
+$heading-font-family: "Anton", sans-serif;
+$main-font-family: "Yusei Magic", sans-serif;
+$film-title-font-family: "Bebas Neue", cursive;
+$main-color: #292d5f;
+$lightened-color: lighten($main-color, 10);
+
+/* Add some styles to the scrollbar in Chrome. */
+::-webkit-scrollbar {
+   width: 8px;
+}
+::-webkit-scrollbar-track {
+   background-color: white;
+}
+::-webkit-scrollbar-thumb {
+   background: $lightened-color;
+}

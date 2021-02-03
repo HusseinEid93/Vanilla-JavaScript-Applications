@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+/* Add some styles to the scrollbar in Chrome. */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #383e83;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scrollbar-color: #383e83 white;
+  scrollbar-width: thin;
+}
+
+body {
+  background-color: #292d5f;
+  font-family: "Yusei Magic", sans-serif;
+  min-height: 100vh;
+  padding: 2rem 0;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  scrollbar-color: #383e83 white;
+  scrollbar-width: thin;
+}
+
+body .next {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 40px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  cursor: pointer;
+  z-index: 10;
+  right: 0;
+}
+
+body .previous {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 40px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  cursor: pointer;
+  z-index: 10;
+  left: 0;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  background-color: #383e83;
+  padding: 1.5rem;
+}
+
+header input {
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: inherit;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  width: 250px;
+  color: #383e83;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: 2px solid #383e83;
+  -webkit-transition: border 0.5s;
+  transition: border 0.5s;
+}
+
+header input:focus {
+  outline: none;
+  border: 2px solid #d0d2eb;
+}
+
+header input::-webkit-input-placeholder {
+  font-weight: bold;
+}
+
+header input:-ms-input-placeholder {
+  font-weight: bold;
+}
+
+header input::-ms-input-placeholder {
+  font-weight: bold;
+}
+
+header input::placeholder {
+  font-weight: bold;
+}
+
+main {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5rem;
+  -ms-grid-columns: (300px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 300px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .movie {
+  position: relative;
+  background-color: #383e83;
+  color: white;
+  width: 300px;
+  height: 450px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+main .movie .image {
+  height: 80%;
+}
+
+main .movie .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .movie .movie-info {
+  position: relative;
+  height: 20%;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+}
+
+main .movie .movie-info h2 {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+main .movie .movie-info span {
+  background-color: #292d5f;
+  padding: 0.3rem;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+main .movie .movie-info span.green {
+  color: #00b300;
+}
+
+main .movie .movie-info span.orange {
+  color: #ffb733;
+}
+
+main .movie .movie-info span.red {
+  color: #ff3333;
+}
+
+main .movie .movie-info i.fa-chevron-up {
+  position: absolute;
+  right: 17px;
+  cursor: pointer;
+  font-size: 1rem;
+  bottom: 5px;
+  color: white;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  -webkit-animation: animate 1s infinite alternate ease-in-out;
+          animation: animate 1s infinite alternate ease-in-out;
+}
+
+main .movie .movie-info i.fa-chevron-up.show {
+  opacity: 1;
+}
+
+main .movie .movie-info i.fa-chevron-up.hide {
+  opacity: 0;
+}
+
+@-webkit-keyframes animate {
+  from {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  to {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+}
+
+@keyframes animate {
+  from {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  to {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+}
+
+main .movie .overview {
+  max-height: 100%;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: no-wrap;
+      flex-wrap: no-wrap;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #292d5f;
+  padding: 1rem;
+  font-size: small;
+  font-weight: bold;
+  font-family: inherit;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  scrollbar-color: #383e83 white;
+  scrollbar-width: thin;
+}
+
+main .movie .overview > h2 {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  text-align: center;
+  color: #292d5f;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+main .movie .overview > h4 {
+  margin-top: 0.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+main .movie .overview.hide {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+main .movie .overview.show {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+main .movie .overview i.fa-chevron-down {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  top: 1rem;
+  color: #292d5f;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  -webkit-animation: animate 1s infinite alternate ease-in-out;
+          animation: animate 1s infinite alternate ease-in-out;
+}
+
+main .movie .overview i.fa-chevron-down.show {
+  opacity: 1;
+}
+
+main .movie .overview i.fa-chevron-down.hide {
+  opacity: 0;
+}
+
+@keyframes animate {
+  from {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  to {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+}

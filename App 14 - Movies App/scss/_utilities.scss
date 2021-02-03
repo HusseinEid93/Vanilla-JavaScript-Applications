@@ -1,0 +1,87 @@
+// Mixins
+@mixin d-flex(
+   $justify-content: flex-start,
+   $align-items: flex-start,
+   $direction: row,
+   $wrap: no-wrap
+) {
+   display: flex;
+   justify-content: $justify-content;
+   align-items: $align-items;
+   flex-direction: $direction;
+   flex-wrap: $wrap;
+}
+
+@mixin d-grid($grid-template-columns, $gap: 1rem, $justify-content: start) {
+   display: grid;
+   gap: $gap;
+   grid-template-columns: $grid-template-columns;
+   justify-content: $justify-content;
+}
+
+@mixin h2-basic-style {
+   font-family: $film-title-font-family;
+   letter-spacing: 1px;
+   line-height: 1.1;
+}
+
+@mixin font($font-size: medium, $font-weight: normal, $font-family: inherit) {
+   font-size: $font-size;
+   font-weight: $font-weight;
+   font-family: $font-family;
+}
+
+@mixin customizedScrollBar {
+   scrollbar-color: $lightened-color white;
+   scrollbar-width: thin;
+}
+
+@mixin chevron-up-down($right, $top-or-bottom, $top-bottom-value, $color) {
+   position: absolute;
+   right: $right;
+   cursor: pointer;
+   font-size: 1rem;
+   @if ($top-or-bottom == top) {
+      top: $top-bottom-value;
+   } @else if ($top-or-bottom == bottom) {
+      bottom: $top-bottom-value;
+   }
+   color: $color;
+
+   transition: opacity 2s;
+   &.show {
+      opacity: 1;
+   }
+   &.hide {
+      opacity: 0;
+   }
+
+   animation: animate 1s infinite alternate ease-in-out;
+   @keyframes animate {
+      from {
+         transform: translateY(4px);
+      }
+      to {
+         transform: translateY(-2px);
+      }
+   }
+}
+
+@mixin pagination($right-or-left) {
+   @include font(2rem, bold);
+   @include d-flex(center, center);
+   position: fixed;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 40px;
+   height: 60px;
+   background-color: rgba(255, 255, 255, 0.5);
+   color: black;
+   cursor: pointer;
+   z-index: 10;
+   @if ($right-or-left == right) {
+      right: 0;
+   } @else {
+      left: 0;
+   }
+}
