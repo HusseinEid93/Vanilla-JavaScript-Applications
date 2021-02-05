@@ -7,7 +7,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: white;
+  background-color: #dfdbdb;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -22,7 +22,7 @@
 }
 
 html {
-  scrollbar-color: #383e83 white;
+  scrollbar-color: #383e83 #e6e0e0;
   scrollbar-width: thin;
 }
 
@@ -40,7 +40,7 @@ body {
   -webkit-box-pack: stretch;
       -ms-flex-pack: stretch;
           justify-content: stretch;
-  scrollbar-color: #383e83 white;
+  scrollbar-color: #383e83 #e6e0e0;
   scrollbar-width: thin;
 }
 
@@ -319,7 +319,7 @@ main .movie .overview {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
-  scrollbar-color: #383e83 white;
+  scrollbar-color: #383e83 #e6e0e0;
   scrollbar-width: thin;
 }
 

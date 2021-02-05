@@ -32,7 +32,7 @@
 }
 
 @mixin customizedScrollBar {
-   scrollbar-color: $lightened-color white;
+   scrollbar-color: $lightened-color rgb(230, 224, 224);
    scrollbar-width: thin;
 }
 

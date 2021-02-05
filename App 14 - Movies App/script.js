@@ -136,8 +136,6 @@ form.addEventListener('submit', e => {
       page = 1;
 
       getMoviesBySearch(searchValue, page)
-
-      search.value = '';
    }
 
 });
@@ -146,10 +144,10 @@ form.addEventListener('submit', e => {
 
 next.addEventListener('click', () => {
    const totalPages = localStorage.getItem('total_pages');
-   if (switchToSearchPagination && ++page <= +totalPages) {
-      getMoviesBySearch(searchTerm, page);
-   } else if (++page <= +totalPages) {
-      getMovies(API_URL, page);
+   if (switchToSearchPagination && page + 1 <= +totalPages) {
+      getMoviesBySearch(searchTerm, ++page);
+   } else if (page + 1 <= +totalPages) {
+      getMovies(API_URL, ++page);
    }
 });
 
