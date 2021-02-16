@@ -1,0 +1,128 @@
+@import "utilities";
+
+/* import Google font */
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+
+// Fonts
+$heading-font: "Luckiest Guy", cursive;
+$basic-font: "Lilita One", cursive;
+$heading-labels-color: #333;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   min-height: 100vh;
+   background-color: #9b59b6;
+   @include d-flex(center, center);
+   font-family: $basic-font;
+}
+
+.container {
+   width: 400px;
+   max-width: 100%;
+   background-color: white;
+   border-radius: 5px;
+   box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
+   overflow: hidden;
+   .header {
+      @include font(1.3rem, $heading-font);
+      background-color: #f7f7f7;
+      padding: 20px 0;
+      border-bottom: 1px solid #f0f0f0;
+      text-align: center;
+      letter-spacing: 1px;
+      color: $heading-labels-color;
+   }
+   form {
+      // List of colors
+      $main-colors-list: #2ecc71, #e74c3c, #8e44ad;
+      padding: 30px 40px;
+      .form-control {
+         margin-bottom: 10px;
+         padding-bottom: 20px;
+         position: relative;
+         &.success input {
+            border-color: nth($main-colors-list, 1);
+         }
+         &.error input {
+            border-color: nth($main-colors-list, 2);
+         }
+         &.success i.fa-check-circle {
+            color: nth($main-colors-list, 1);
+            visibility: visible;
+         }
+         &.error i.fa-exclamation-circle {
+            color: nth($main-colors-list, 2);
+            visibility: visible;
+         }
+         &.error small {
+            visibility: visible;
+            color: nth($main-colors-list, 2);
+         }
+         &.showPassword i.fa-eye {
+            visibility: visible !important;
+         }
+      }
+      label {
+         @include font(1.1rem, null, bold);
+         display: inline-block;
+         margin-bottom: 5px;
+         color: $heading-labels-color;
+         letter-spacing: 1px;
+         text-transform: uppercase;
+      }
+      input {
+         @include font(1rem, inherit);
+         color: lighten($heading-labels-color, 5);
+         border: 2px solid #f0f0f0;
+         display: block;
+         width: 100%;
+         padding: 10px;
+         border-radius: 5px;
+         &:focus {
+            outline: none;
+         }
+         &::placeholder {
+            opacity: 0.4;
+         }
+         &[type="submit"] {
+            @include font(1rem, inherit);
+            $main-color: nth($main-colors-list, -1);
+            background-color: $main-color;
+            border: 2px solid $main-color;
+            color: white;
+            width: 100%;
+            padding: 10px 0;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 3px;
+            &:hover {
+               background-color: darken($main-color, 10);
+               border-color: darken($main-color, 10);
+            }
+         }
+      }
+      i {
+         position: absolute;
+         top: 37px;
+         right: 10px;
+         visibility: hidden;
+         &.fa-eye {
+            cursor: pointer;
+            color: rgb(80, 76, 76);
+         }
+      }
+      small {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         visibility: hidden;
+      }
+   }
+}

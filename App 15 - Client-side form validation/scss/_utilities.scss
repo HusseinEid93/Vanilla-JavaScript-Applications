@@ -1,0 +1,22 @@
+@mixin d-flex(
+   $justify-content: flex-start,
+   $align-items: flex-start,
+   $flex-direction: row
+) {
+   display: flex;
+   flex-direction: $flex-direction;
+   justify-content: $justify-content;
+   align-items: $align-items;
+}
+
+@mixin font($size: null, $family: null, $weight: null) {
+   @if (size) {
+      font-size: $size;
+   }
+   @if ($family) {
+      font-family: $family;
+   }
+   @if ($weight) {
+      font-weight: $weight;
+   }
+}

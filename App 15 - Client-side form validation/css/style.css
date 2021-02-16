@@ -1,0 +1,166 @@
+/* import Google font */
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #9b59b6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Lilita One", cursive;
+}
+
+.container {
+  width: 400px;
+  max-width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.container .header {
+  font-size: 1.3rem;
+  font-family: "Luckiest Guy", cursive;
+  background-color: #f7f7f7;
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.container form {
+  padding: 30px 40px;
+}
+
+.container form .form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.container form .form-control.success input {
+  border-color: #2ecc71;
+}
+
+.container form .form-control.error input {
+  border-color: #e74c3c;
+}
+
+.container form .form-control.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.container form .form-control.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.container form .form-control.error small {
+  visibility: visible;
+  color: #e74c3c;
+}
+
+.container form .form-control.showPassword i.fa-eye {
+  visibility: visible !important;
+}
+
+.container form label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #333;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.container form input {
+  font-size: 1rem;
+  font-family: inherit;
+  color: #404040;
+  border: 2px solid #f0f0f0;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.container form input:focus {
+  outline: none;
+}
+
+.container form input::-webkit-input-placeholder {
+  opacity: 0.4;
+}
+
+.container form input:-ms-input-placeholder {
+  opacity: 0.4;
+}
+
+.container form input::-ms-input-placeholder {
+  opacity: 0.4;
+}
+
+.container form input::placeholder {
+  opacity: 0.4;
+}
+
+.container form input[type="submit"] {
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #8e44ad;
+  border: 2px solid #8e44ad;
+  color: white;
+  width: 100%;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 3px;
+}
+
+.container form input[type="submit"]:hover {
+  background-color: #703688;
+  border-color: #703688;
+}
+
+.container form i {
+  position: absolute;
+  top: 37px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.container form i.fa-eye {
+  cursor: pointer;
+  color: #504c4c;
+}
+
+.container form small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
