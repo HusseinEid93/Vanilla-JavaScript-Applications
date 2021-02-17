@@ -33,7 +33,7 @@ function checkInputs() {
             return;
          }
 
-         else if (index === 3 && input.value != password.value) {
+         else if (index === 3 && input.value.trim() != password.value.trim()) {
             setError(input, 'Passwords don’t match');
             return;
          }

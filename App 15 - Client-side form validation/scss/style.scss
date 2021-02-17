@@ -8,6 +8,7 @@
 $heading-font: "Luckiest Guy", cursive;
 $basic-font: "Lilita One", cursive;
 $heading-labels-color: #333;
+$purplish-color: #9b59b6;
 
 * {
    margin: 0;
@@ -17,7 +18,16 @@ $heading-labels-color: #333;
 
 body {
    min-height: 100vh;
-   background-color: #9b59b6;
+   background: linear-gradient(
+      150deg,
+      lighten($purplish-color, 30),
+      lighten($purplish-color, 25),
+      lighten($purplish-color, 20),
+      lighten($purplish-color, 15),
+      lighten($purplish-color, 10),
+      lighten($purplish-color, 5),
+      $purplish-color
+   );
    @include d-flex(center, center);
    font-family: $basic-font;
 }
@@ -25,7 +35,7 @@ body {
 .container {
    width: 400px;
    max-width: 100%;
-   background-color: white;
+   background-color: rgba(255, 255, 255, 0.2);
    border-radius: 5px;
    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
    overflow: hidden;
@@ -47,10 +57,10 @@ body {
          padding-bottom: 20px;
          position: relative;
          &.success input {
-            border-color: nth($main-colors-list, 1);
+            border-color: nth($main-colors-list, 1) !important;
          }
          &.error input {
-            border-color: nth($main-colors-list, 2);
+            border-color: nth($main-colors-list, 2) !important;
          }
          &.success i.fa-check-circle {
             color: nth($main-colors-list, 1);
@@ -84,8 +94,10 @@ body {
          width: 100%;
          padding: 10px;
          border-radius: 5px;
+         transition: border-color 0.3s;
          &:focus {
             outline: none;
+            border-color: $purplish-color;
          }
          &::placeholder {
             opacity: 0.4;
@@ -110,7 +122,7 @@ body {
       }
       i {
          position: absolute;
-         top: 37px;
+         top: 38px;
          right: 10px;
          visibility: hidden;
          &.fa-eye {

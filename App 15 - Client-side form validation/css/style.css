@@ -10,7 +10,7 @@
 
 body {
   min-height: 100vh;
-  background-color: #9b59b6;
+  background: linear-gradient(150deg, #dbc3e5, #d0b2dd, #c6a0d5, #bb8ecd, #b07cc6, #a66bbe, #9b59b6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +30,7 @@ body {
 .container {
   width: 400px;
   max-width: 100%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   -webkit-box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.3);
@@ -59,11 +59,11 @@ body {
 }
 
 .container form .form-control.success input {
-  border-color: #2ecc71;
+  border-color: #2ecc71 !important;
 }
 
 .container form .form-control.error input {
-  border-color: #e74c3c;
+  border-color: #e74c3c !important;
 }
 
 .container form .form-control.success i.fa-check-circle {
@@ -104,10 +104,13 @@ body {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
 }
 
 .container form input:focus {
   outline: none;
+  border-color: #9b59b6;
 }
 
 .container form input::-webkit-input-placeholder {
@@ -148,7 +151,7 @@ body {
 
 .container form i {
   position: absolute;
-  top: 37px;
+  top: 38px;
   right: 10px;
   visibility: hidden;
 }
