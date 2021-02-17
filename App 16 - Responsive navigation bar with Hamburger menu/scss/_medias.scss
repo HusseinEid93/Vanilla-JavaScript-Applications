@@ -1,0 +1,41 @@
+@media (max-width: 768px) {
+   nav {
+      .nav-links {
+         width: 50%;
+         position: absolute;
+         right: 0;
+         height: 92vh;
+         top: 8vh;
+         background-color: $brownish-color;
+         grid-template-columns: 1fr;
+         align-items: center;
+         transform: translateX(100%);
+         text-align: center;
+         li {
+            opacity: 0;
+            transform: translateX(50%);
+            transition: all 1s;
+            &.slideIn {
+               animation-name: navLinksFadeIn;
+               animation-duration: 0.75s;
+               animation-timing-function: ease-in;
+               animation-fill-mode: forwards;
+               @keyframes navLinksFadeIn {
+                  from {
+                     opacity: 0;
+                     transform: translateX(50%);
+                  }
+                  to {
+                     opacity: 1;
+                     transform: translateX(0%);
+                  }
+               }
+            }
+         }
+      }
+
+      .burger {
+         display: block;
+      }
+   }
+}

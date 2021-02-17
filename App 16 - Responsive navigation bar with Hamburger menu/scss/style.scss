@@ -1,0 +1,78 @@
+@import "utilities";
+
+/* Google font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+// Variables
+$whitish-color: rgb(226, 226, 226);
+$brownish-color: #5d4954;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+}
+
+nav {
+   background-color: $brownish-color;
+   min-height: 8vh;
+   @include d-flex(space-around, center);
+   .logo {
+      color: $whitish-color;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 22px;
+   }
+   .nav-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2rem;
+      list-style-type: none;
+      transition: transform 0.5s ease-in;
+
+      a {
+         @include font(14px, none, bold);
+         color: $whitish-color;
+         letter-spacing: 3px;
+         text: {
+            transform: uppercase;
+            decoration: none;
+         }
+         &:focus {
+            outline: none;
+         }
+      }
+      &.active {
+         transform: translateX(0);
+      }
+   }
+
+   .burger {
+      display: none;
+      cursor: pointer;
+      > div {
+         width: 25px;
+         height: 3px;
+         background-color: $whitish-color;
+         transition: all 0.25s;
+         &:not(:last-child) {
+            margin-bottom: 0.25rem;
+         }
+      }
+      &.active {
+         .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+         }
+         .line2 {
+            opacity: 0;
+         }
+         .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+         }
+      }
+   }
+}
+
+// Import the media queries
+@import "_medias";
