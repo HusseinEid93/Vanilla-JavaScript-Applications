@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+@mixin d-flex($justify-content, $align-items, $flex-direction: row) {
+   display: flex;
+   flex-direction: $flex-direction;
+   justify-content: $justify-content;
+   align-items: $align-items;
+}
+
+body {
+   @include d-flex(center, center);
+   font-family: "Balsamiq Sans", cursive;
+   display: flex;
+   min-height: 100vh;
+   transition: background-color 0.3s ease-in;
+}
+
+@mixin common-structure($py, $letter-spacing: null) {
+   background-color: black;
+   color: white;
+   padding: $py 0;
+   letter-spacing: $letter-spacing;
+   font: {
+      family: inherit;
+      size: 1.5rem;
+      weight: bold;
+   }
+}
+
+.container {
+   @include d-flex(null, null, column);
+   text-align: center;
+   width: 300px;
+   max-width: 100%;
+   button {
+      @include common-structure(20px, 2px);
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease-in;
+      &:hover {
+         background-color: lighten(black, 15);
+      }
+      &:focus {
+         outline: none;
+      }
+      &:active {
+         transform: scale(0.98);
+      }
+   }
+
+   p {
+      @include common-structure(20px, 1px);
+      font-size: 1.5rem;
+      margin-top: 2rem;
+   }
+}
