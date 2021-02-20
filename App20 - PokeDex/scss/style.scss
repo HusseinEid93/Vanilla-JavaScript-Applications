@@ -1,0 +1,96 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+$headings-font: "Anton", sans-serif;
+$regular-font: "Montserrat", sans-serif;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+@mixin d-flex(
+   $justify-content: flex-start,
+   $align-items: flex-start,
+   $flex-direction: row,
+   $flex-wrap: no-wrap
+) {
+   display: flex;
+   flex-direction: $flex-direction;
+   justify-content: $justify-content;
+   align-items: $align-items;
+   flex-wrap: $flex-wrap;
+}
+
+body {
+   background: #efefbb;
+   background: linear-gradient(to right, #d4d3dd, #efefbb);
+   font-family: $headings-font;
+}
+
+h1 {
+   text: {
+      align: center;
+      transform: uppercase;
+   }
+   margin-top: 2rem;
+   letter-spacing: 5px;
+   font-size: 3rem;
+}
+
+#poke-container {
+   width: 100%;
+   padding: 2rem;
+   margin: 2rem 0;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   justify-content: center;
+   align-content: center;
+   gap: 2rem;
+   .pokemon {
+      @include d-flex(center, center, column);
+      background-color: #eee;
+      border-radius: 20px;
+      padding: 1rem;
+      box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+         transform: translateY(-10px);
+      }
+      .img-container {
+         width: 90%;
+         border-radius: 50%;
+         background-color: rgba(255, 255, 255, 0.6);
+         img {
+            max-width: 100%;
+         }
+      }
+
+      .info {
+         text-align: center;
+         margin-top: 1.5rem;
+         .number {
+            background-color: white;
+            border-radius: 20px;
+            padding: 5px 10px;
+         }
+         .name {
+            margin: 0.75rem 0;
+            font-family: $regular-font;
+            letter-spacing: 2px;
+         }
+         .type-container {
+            @include d-flex(center, center);
+            .type {
+               margin-left: 0.25rem;
+               font: {
+                  family: $regular-font;
+                  weight: bold;
+               }
+            }
+         }
+      }
+   }
+}
