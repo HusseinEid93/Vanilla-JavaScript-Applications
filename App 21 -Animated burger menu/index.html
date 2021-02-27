@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <!-- Font Awesome -->
+      <script
+         src="https://kit.fontawesome.com/ 54688c9bf4.js"
+         crossorigin="anonymous"
+      ></script>
+
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      />
+
+      <link
+         rel=" stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      />
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      />
+
+      <link rel="stylesheet" href="./css/style.css" />
+      <title>Animated burger menu</title>
+   </head>
+
+   <body>
+      <button class="open-btn">
+         <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="nav nav-black">
+         <div class="nav nav-red">
+            <div class="nav nav-white">
+               <button class="close-btn">
+                  <i class="fas fa-times"></i>
+               </button>
+
+               <nav>
+                  <ul>
+                     <li><a href="#">item 1</a></li>
+
+                     <li><a href="#">item 2</a></li>
+
+                     <li class="dropdown-item">
+                        <div class="wrapper">
+                           <a href="#">item 3</a>
+                           <i class="fas fa-chevron-down fa-1x"></i>
+                        </div>
+
+                        <div class="dropdown-menu">
+                           <ul>
+                              <li><a href="#">subitem 1</a></li>
+                              <li><a href="#">subitem 2</a></li>
+                              <li><a href="#">subitem 3</a></li>
+                           </ul>
+                        </div>
+                     </li>
+
+                     <li><a href="#">item 4</a></li>
+                  </ul>
+               </nav>
+            </div>
+         </div>
+      </div>
+
+      <script src="./script.js"></script>
+   </body>
+</html>
