@@ -1,0 +1,17 @@
+@mixin FireFox-scrollbar($color) {
+   scrollbar-width: thin;
+   scrollbar-color: $color transparent;
+}
+
+@mixin Chrome-scrollbar {
+   width: 8px;
+   &-track {
+      background-color: transparent;
+   }
+   &-thumb {
+      background: $main-color;
+      &:hover {
+         background-color: darken($main-color, 12);
+      }
+   }
+}

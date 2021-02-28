@@ -1,0 +1,74 @@
+@import "scrollbars";
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+$main-color: #343436;
+$orangish-color: #f0932b;
+
+::-webkit-scrollbar {
+   @include Chrome-scrollbar;
+}
+
+html {
+   @include FireFox-scrollbar($orangish-color);
+}
+
+* {
+   box-sizing: border-box;
+}
+body {
+   background-color: $main-color;
+   font-family: "Open Sans", sans-serif;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   margin: 0;
+   padding: 10px;
+}
+
+.container {
+   width: 500px;
+   max-width: 100%;
+   padding: 10px;
+   background-color: rgba(255, 255, 255, 0.2);
+   border-radius: 5px;
+   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+   h3 {
+      color: white;
+      margin: 10px 0 20px;
+      text-align: center;
+   }
+   textarea {
+      border: 0;
+      display: block;
+      margin: 0 0 20px;
+      padding: 10px;
+      width: 100%;
+      height: 100px;
+      resize: none;
+      border-radius: 5px;
+      font: {
+         family: inherit;
+         size: 16px;
+      }
+      &:focus {
+         outline: none;
+      }
+      @include FireFox-scrollbar($main-color);
+   }
+
+   .tag {
+      background-color: $orangish-color;
+      border-radius: 50px;
+      color: white;
+      display: inline-block;
+      margin: 0 5px 10px 0;
+      padding: 10px 20px;
+      font-size: 14px;
+      &.highlight {
+         background-color: #428c51;
+      }
+   }
+}
