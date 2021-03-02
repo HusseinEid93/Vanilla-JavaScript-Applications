@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <!-- Font Awesome -->
+      <script
+         src="https://kit.fontawesome.com/ 54688c9bf4.js"
+         crossorigin="anonymous"
+      ></script>
+
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      />
+
+      <link
+         rel=" stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      />
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      />
+
+      <link rel="stylesheet" href="./css/bootstrap.css" />
+      <link rel="stylesheet" href="./css/style.css" />
+      <title>JS Issue Tracker</title>
+   </head>
+
+   <body>
+      <div class="container mt-4">
+         <h1 class="font-weight-bold mb-4">JS Issue Tracker</h1>
+         <div class="jumbotron">
+            <h2 class="font-weight-bold mb-4">Add new Issue:</h2>
+            <form id="issueInputForm">
+               <div class="form-group">
+                  <label for="issueDescInput" class="font-weight-bold">
+                     Description
+                  </label>
+                  <input
+                     type="text"
+                     id="issueDescInput"
+                     class="form-control"
+                     placeholder="Describe the issue..."
+                  />
+               </div>
+
+               <div class="form-group">
+                  <label for="issueSeverityInput" class="font-weight-bold">
+                     Severity
+                  </label>
+                  <select id="issueSeverityInput" class="form-control">
+                     <option value="Low">Low</option>
+                     <option value="Medium">Medium</option>
+                     <option value="High">High</option>
+                  </select>
+               </div>
+
+               <div class="form-group">
+                  <label for="issueAssignedToInput" class="font-weight-bold">
+                     Assigned To
+                  </label>
+                  <input
+                     type="text"
+                     id="issueAssignedToInput"
+                     class="form-control"
+                     placeholder="Enter responsible..."
+                  />
+               </div>
+
+               <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+         </div>
+
+         <div id="issuesList"></div>
+
+         <footer class="mb-5">&copy; All rights reserved. Hussein Eid</footer>
+      </div>
+
+      <!-- include chance.js for generating identifiers  -->
+      <script src="https://chancejs.com/chance.min.js"></script>
+      <script src="./script.js"></script>
+   </body>
+</html>
