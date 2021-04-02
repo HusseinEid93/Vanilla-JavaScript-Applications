@@ -1,0 +1,5 @@
+@mixin d-grid($grid-template-columns: 1fr, $gap: 0) {
+   display: grid;
+   gap: $gap;
+   grid-template-columns: $grid-template-columns;
+}

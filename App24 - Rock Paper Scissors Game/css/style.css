@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+@media (max-width: 575px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+header {
+  margin: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5rem;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+@media (max-width: 575px) {
+  header h1 {
+    font-size: 1.75rem;
+  }
+}
+
+header #restart {
+  display: none;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: #f4f4f4;
+  color: inherit;
+  padding: 0.4rem 1.3rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+header #restart:hover {
+  background-color: #003699;
+  color: white;
+}
+
+header #score {
+  display: -ms-grid;
+  display: grid;
+  gap: 0;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 575px) {
+  header #score {
+    font-size: 1rem;
+  }
+}
+
+header #score > * {
+  padding: 0.25rem 0;
+}
+
+header #score > *:first-child {
+  background-color: #003699;
+}
+
+header #score > *:last-child {
+  background-color: #333;
+}
+
+.choices-container {
+  display: -ms-grid;
+  display: grid;
+  gap: 1.5rem;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.choices-container .choices {
+  display: -ms-grid;
+  display: grid;
+  gap: 0;
+  -ms-grid-columns: (max-content)[3];
+      grid-template-columns: repeat(3, -webkit-max-content);
+      grid-template-columns: repeat(3, max-content);
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.choices-container .choices i {
+  font-size: 10rem;
+  cursor: pointer;
+}
+
+.choices-container .choices i:hover {
+  color: #003699;
+}
+
+.modal {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal.showModal {
+  -webkit-animation-name: modalOpen;
+          animation-name: modalOpen;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+          box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+.modal-content i {
+  font-size: 10rem;
+}
+
+.modal-content p {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@-webkit-keyframes modalOpen {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  15%,
+  85% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@keyframes modalOpen {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  15%,
+  85% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.text-win {
+  color: #28a745;
+}
+
+.text-lose {
+  color: #dc3545;
+}
+
+.text-draw {
+  color: #ffa702;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  i {
+    font-size: 7rem !important;
+  }
+}
+
+@media (max-width: 575px) {
+  i {
+    font-size: 5rem !important;
+  }
+}

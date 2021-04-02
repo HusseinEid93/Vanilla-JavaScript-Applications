@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- Font Awesome -->
+      <script
+         src="https://kit.fontawesome.com/ 54688c9bf4.js"
+         crossorigin="anonymous"
+      ></script>
+
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      />
+
+      <link
+         rel=" stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      />
+      <link
+         rel="stylesheet"
+         media="all"
+         href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      />
+      <!-- style.css -->
+      <link rel="stylesheet" href="./css/style.css" />
+      <title>Rock-Paper-Scissors game</title>
+   </head>
+   <body>
+      <div class="container">
+         <header>
+            <h1>Rock Paper Scissors</h1>
+            <button id="restart">Restart Game</button>
+            <div id="score">
+               <div>
+                  Player:
+                  <span class="playerScore">0</span>
+               </div>
+               <div>
+                  Computer:
+                  <span class="computerScore">0</span>
+               </div>
+            </div>
+         </header>
+
+         <div class="choices-container">
+            <h2>Make Your Choice</h2>
+            <div class="choices">
+               <i id="rock" class="choice fas fa-hand-rock"></i>
+               <i id="paper" class="choice fas fa-hand-paper"></i>
+               <i id="scissors" class="choice fas fa-hand-scissors"></i>
+            </div>
+         </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal">
+         <div id="result" class="modal-content"></div>
+      </div>
+      <script src="./script.js"></script>
+   </body>
+</html>

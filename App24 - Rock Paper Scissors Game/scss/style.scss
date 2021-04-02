@@ -1,0 +1,95 @@
+@import "variables", "utilities";
+// Google font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   transition: 0.3s ease-out;
+}
+body {
+   font-family: "Roboto", sans-serif;
+   color: $dark-color;
+}
+.container {
+   max-width: 80%;
+   margin: auto;
+   text-align: center;
+   @media (max-width: 575px) {
+      max-width: 90%;
+   }
+}
+header {
+   margin: 1rem 0;
+   @include d-grid(1fr, 1.5rem);
+   h1 {
+      @media (max-width: 575px) {
+         font-size: 1.75rem;
+      }
+   }
+   #restart {
+      display: none;
+      justify-self: center;
+      background-color: $light-color;
+      color: inherit;
+      padding: 0.4rem 1.3rem;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      font: {
+         size: 1rem;
+         family: inherit;
+      }
+      &:hover {
+         background-color: $primary-color;
+         color: white;
+      }
+   }
+   #score {
+      @include d-grid(repeat(2, 1fr));
+      color: white;
+      font-size: 1.5rem;
+      @media (max-width: 575px) {
+         font-size: 1rem;
+      }
+      > * {
+         padding: 0.25rem 0;
+         &:first-child {
+            background-color: $primary-color;
+         }
+         &:last-child {
+            background-color: $dark-color;
+         }
+      }
+   }
+}
+
+.choices-container {
+   @include d-grid(1fr, 1.5rem);
+   .choices {
+      @include d-grid(repeat(3, max-content));
+      justify-content: space-around;
+      i {
+         font-size: 10rem;
+         cursor: pointer;
+         &:hover {
+            color: $primary-color;
+         }
+      }
+   }
+}
+
+// Import the style of the modal
+@import "modal";
+
+/* Media Queries */
+@media (max-width: 767px) {
+   i {
+      font-size: 7rem !important;
+   }
+}
+@media (max-width: 575px) {
+   i {
+      font-size: 5rem !important;
+   }
+}

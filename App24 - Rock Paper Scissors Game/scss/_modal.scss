@@ -1,0 +1,67 @@
+.modal {
+   opacity: 0;
+   pointer-events: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(black, 0.5);
+   z-index: 2;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   &.showModal {
+      animation-name: modalOpen;
+      animation-duration: $modal-duration;
+   }
+   &-content {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1.5rem 3rem;
+      text-align: center;
+      display: grid;
+      gap: 1rem;
+      justify-items: center;
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2),
+         0 7px 20px 0 rgba(0, 0, 0, 0.17);
+      i {
+         font-size: 10rem;
+      }
+      p {
+         text-transform: capitalize;
+         font: {
+            size: 1.2rem;
+            weight: 500;
+         }
+      }
+   }
+}
+
+@keyframes modalOpen {
+   0% {
+      opacity: 0;
+      pointer-events: none;
+   }
+   15%,
+   85% {
+      opacity: 1;
+      pointer-events: all;
+   }
+   100% {
+      opacity: 0;
+      pointer-events: none;
+   }
+}
+
+.text {
+   &-win {
+      color: $win-color;
+   }
+   &-lose {
+      color: $lose-color;
+   }
+   &-draw {
+      color: rgb(255, 167, 2);
+   }
+}
