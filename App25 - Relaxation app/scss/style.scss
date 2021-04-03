@@ -1,0 +1,114 @@
+@import "mixins";
+
+// Google fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   font-family: "Montserrat", sans-serif;
+   color: white;
+   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../images/img.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   min-height: 100vh;
+   @include d-flex(center, flex-start, column);
+}
+
+h1 {
+   margin-top: 3rem;
+   font-family: "Anton", sans-serif;
+   letter-spacing: 4px;
+   font-size: 3rem;
+}
+#text {
+   font: {
+      size: 1.5rem;
+      weight: 700;
+   }
+}
+.container {
+   @include d-flex(center, center);
+   width: 300px;
+   height: 300px;
+   position: relative;
+   margin: auto;
+   &.grow {
+      animation: grow 3s linear;
+      animation-fill-mode: forwards;
+   }
+   &.shrink {
+      animation: shrink 3s linear;
+      animation-fill-mode: forwards;
+   }
+}
+.gradient-circle {
+   background: conic-gradient(
+      #55b7a4 0%,
+      #4ca493 40%,
+      #fff 40%,
+      #fff 60%,
+      #336d62 60%,
+      #2a5b52 100%
+   );
+   width: 300px;
+   height: 300px;
+   border-radius: 50%;
+   position: absolute;
+   z-index: -2;
+}
+.circle {
+   background-color: #010f1c;
+   position: absolute;
+   z-index: -1;
+   width: 93%;
+   height: 93%;
+   border-radius: 50%;
+}
+.pointer-container {
+   width: 20px;
+   height: 190px;
+   position: absolute;
+   top: -40px;
+   transform-origin: bottom center;
+   animation: rotate 7.5s linear infinite;
+   .pointer {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: white;
+   }
+}
+
+@keyframes rotate {
+   from {
+      transform: rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+@keyframes grow {
+   from {
+      transform: scale(1);
+   }
+   to {
+      transform: scale(1.2);
+   }
+}
+
+@keyframes shrink {
+   from {
+      transform: scale(1.2);
+   }
+   to {
+      transform: scale(1);
+   }
+}
