@@ -1,0 +1,21 @@
+@mixin d-flex(
+   $justify-content: flex-start,
+   $align-items: flex-start,
+   $direction: row
+) {
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $justify-content;
+   align-items: $align-items;
+}
+
+@mixin d-grid($grid-template-columns, $gap) {
+   display: grid;
+   grid-template-columns: $grid-template-columns;
+   gap: $gap;
+}
+
+@mixin font($size, $weight) {
+   font-size: $size;
+   font-weight: $weight;
+}

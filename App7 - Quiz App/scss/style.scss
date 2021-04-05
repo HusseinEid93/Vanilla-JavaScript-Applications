@@ -1,0 +1,152 @@
+@import "mixins";
+// Google font
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
+
+$main-color: rgb(40, 40, 44);
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   font-family: "Open Sans", sans-serif;
+}
+
+%button {
+   @include font(1.2rem, inherit);
+   margin-top: 20px;
+   width: 100%;
+   padding: 10px;
+   cursor: pointer;
+   background-color: rgb(98, 100, 105);
+   color: rgb(20, 20, 20);
+   border: none;
+   outline: none;
+   transition: 0.3s ease background-color;
+   &:hover {
+      background-color: rgb(145, 148, 155);
+   }
+}
+
+section {
+   min-height: 100vh;
+   width: 100%;
+   background-color: rgb(25, 25, 26);
+   @include d-flex(center, center);
+   .container {
+      background-color: $main-color;
+      color: white;
+      padding: 60px 30px 30px 30px;
+      width: 100%;
+      max-width: 600px;
+      min-height: 400px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 1px 1px 3px rgb(61, 60, 60), -1px -1px 3px rgb(61, 60, 60),
+         1px -1px 3px rgb(61, 60, 60), -1px 1px 3px rgb(61, 60, 60);
+   }
+   .scoreBoard {
+      @include font(0.9rem, 700);
+      position: absolute;
+      top: 15px;
+      right: 20px;
+   }
+   form {
+      margin-top: 0.5rem;
+      width: 100%;
+      h1 {
+         @include d-grid(auto 1fr, 0.5rem);
+         @include font(1.5rem, 800);
+         margin-bottom: 2rem;
+         .question {
+            font-weight: 700;
+         }
+      }
+      .all-options {
+         width: 95%;
+         margin: auto;
+      }
+      .option {
+         @include d-grid(auto 1fr, 0.5rem);
+         font-weight: 600;
+         align-items: center;
+         padding: 10px;
+         border-radius: 4px;
+         transition: background-color 0.3s ease;
+         &.correct {
+            background-color: green;
+            label {
+               color: white !important;
+            }
+         }
+         &:hover {
+            background-color: rgb(23, 23, 24);
+         }
+         input {
+            cursor: pointer;
+         }
+         label {
+            cursor: pointer;
+            transition: color 0.3s ease;
+         }
+         input:checked + label {
+            color: rgb(0, 238, 255);
+         }
+      }
+
+      button {
+         @extend %button;
+      }
+
+      .finish-continue-btns {
+         @include d-grid(1fr 1fr, 2px);
+         display: none;
+      }
+   }
+}
+
+.result {
+   background-color: $main-color;
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   @include d-grid(auto, 1rem);
+   align-content: center;
+   justify-items: center;
+   h1 {
+      @include font(5rem, 800);
+   }
+   &.show {
+      z-index: 3 !important;
+   }
+   button {
+      @extend %button;
+      margin: 0;
+      width: 50%;
+   }
+}
+
+.placeholder {
+   position: absolute;
+   z-index: 10;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: {
+      image: url(../images/placeholder.png);
+      position: center;
+      size: 70%;
+      repeat: no-repeat;
+      color: $main-color;
+   }
+   &.hide {
+      z-index: -3 !important;
+      pointer-events: none;
+   }
+}

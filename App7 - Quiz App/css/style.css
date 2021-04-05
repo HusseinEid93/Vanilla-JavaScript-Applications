@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+section form button, .result button {
+  font-size: 1.2rem;
+  font-weight: inherit;
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #626469;
+  color: #141414;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.3s ease background-color;
+  transition: 0.3s ease background-color;
+}
+
+section form button:hover, .result button:hover {
+  background-color: #91949b;
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #19191a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .container {
+  background-color: #28282c;
+  color: white;
+  padding: 60px 30px 30px 30px;
+  width: 100%;
+  max-width: 600px;
+  min-height: 400px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 1px 1px 3px #3d3c3c, -1px -1px 3px #3d3c3c, 1px -1px 3px #3d3c3c, -1px 1px 3px #3d3c3c;
+          box-shadow: 1px 1px 3px #3d3c3c, -1px -1px 3px #3d3c3c, 1px -1px 3px #3d3c3c, -1px 1px 3px #3d3c3c;
+}
+
+section .scoreBoard {
+  font-size: 0.9rem;
+  font-weight: 700;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+section form {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+section form h1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+section form h1 .question {
+  font-weight: 700;
+}
+
+section form .all-options {
+  width: 95%;
+  margin: auto;
+}
+
+section form .option {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+  font-weight: 600;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+section form .option.correct {
+  background-color: green;
+}
+
+section form .option.correct label {
+  color: white !important;
+}
+
+section form .option:hover {
+  background-color: #171718;
+}
+
+section form .option input {
+  cursor: pointer;
+}
+
+section form .option label {
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+section form .option input:checked + label {
+  color: #00eeff;
+}
+
+section form .finish-continue-btns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  display: none;
+}
+
+.result {
+  background-color: #28282c;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  gap: 1rem;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+}
+
+.result h1 {
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+.result.show {
+  z-index: 3 !important;
+}
+
+.result button {
+  margin: 0;
+  width: 50%;
+}
+
+.placeholder {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../images/placeholder.png);
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-color: #28282c;
+}
+
+.placeholder.hide {
+  z-index: -3 !important;
+  pointer-events: none;
+}
