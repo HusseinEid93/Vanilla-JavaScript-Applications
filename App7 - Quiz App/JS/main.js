@@ -140,7 +140,8 @@
 
 
    function htmlDecode(input) {
-      var doc = new DOMParser().parseFromString(input, "text/html");
+      const doc = new DOMParser().parseFromString(input, "text/html");
       return doc.body.textContent;
    }
+
 })();
