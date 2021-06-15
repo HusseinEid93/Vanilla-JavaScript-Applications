@@ -1,0 +1,40 @@
+/* Google font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+// Variables
+$primaryColor: #339af0;
+$dangerColor: rgb(226, 57, 57);
+$componentBackground: #3a3b3c;
+$componentPadding: 30px 20px;
+$componentBorderRadius: 10px;
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+   overflow-x: hidden;
+   background-color: #18191a;
+   color: white;
+}
+
+html {
+   scrollbar-width: thin;
+   scrollbar-color: $primaryColor transparent;
+}
+
+::-webkit-scrollbar {
+   width: 6px;
+   &-track {
+      background-color: transparent;
+   }
+   &-thumb {
+      background: $primaryColor;
+      &:hover {
+         background-color: darken($primaryColor, 12);
+      }
+   }
+}

@@ -1,0 +1,30 @@
+@mixin d-flex($justify-content, $align-items, $gap: 0, $direction: row) {
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $justify-content;
+   align-items: $align-items;
+   gap: $gap;
+}
+
+@mixin input($height, $border, $border-radius, $mt, $padding, $transition) {
+   height: $height;
+   border: $border;
+   border-radius: $border-radius;
+   margin-top: $mt;
+   padding: $padding;
+   transition: $transition;
+   outline: none;
+}
+
+@mixin d-grid($gap: 0, $align-items: center) {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1.4fr 40px;
+   gap: $gap;
+   align-items: $align-items;
+}
+
+@mixin form-list {
+   background-color: #3a3b3c;
+   padding: 30px 20px;
+   border-radius: 10px;
+}

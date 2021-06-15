@@ -1,0 +1,150 @@
+@import "reset", "utilities";
+
+.container {
+   width: 500px;
+   max-width: 100%;
+   margin: 50px auto;
+}
+h1 {
+   text-align: center;
+   letter-spacing: 2px;
+   font: {
+      size: 3rem;
+      weight: 500;
+   }
+   span {
+      color: $primaryColor;
+   }
+   i {
+      margin-right: 1rem;
+      color: $primaryColor;
+   }
+}
+
+.alert {
+   position: fixed;
+   height: 50px;
+   width: 230px;
+   top: 50px;
+   right: 0;
+   border-radius: 5px 0 0 5px;
+   color: white;
+   font-weight: 500;
+   @include d-flex(center, center);
+   transform: translateX(100%);
+   &-warning {
+      background-color: #ffc107;
+   }
+   &-danger {
+      background-color: $dangerColor;
+   }
+   &-success {
+      background-color: #04aa6d;
+      i {
+         margin-right: 0.7rem;
+      }
+   }
+   &.show {
+      z-index: 10;
+      animation: show 3s ease-in-out;
+      @keyframes show {
+         0% {
+            transform: translateX(100%);
+         }
+         15% {
+            transform: translateX(0);
+         }
+         90% {
+            transform: translateX(0);
+         }
+         100% {
+            transform: translateX(100%);
+         }
+      }
+   }
+}
+
+.form {
+   @include form-list();
+   margin-top: 1.5rem;
+   @include d-flex(null, null, 1rem, column);
+   &-group {
+      @include d-flex(null, null, 0.3rem, column);
+      label {
+         font-weight: 500;
+      }
+      input[type="text"] {
+         @include input(
+            33px,
+            2px solid lighten($primaryColor, 10),
+            4px,
+            0,
+            5px 10px,
+            0.2s ease-in
+         );
+         caret-color: $primaryColor;
+         &:focus {
+            box-shadow: 0 0 5px $primaryColor;
+         }
+         &::placeholder {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #555;
+         }
+      }
+   }
+   input[type="submit"] {
+      @include input(45px, none, 0, 0.5rem, 0, 0.5s);
+      background-color: $primaryColor;
+      color: white;
+      letter-spacing: 2px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      &:hover {
+         background-color: darken($primaryColor, 8);
+      }
+   }
+}
+
+.list {
+   margin-top: 3rem;
+   @include form-list();
+   .header {
+      margin-bottom: 1rem;
+      @include d-grid();
+      font-weight: 500;
+      text-transform: uppercase;
+      span {
+         background-color: #535556;
+         padding: 5px;
+         border-radius: 4px;
+      }
+   }
+
+   .book {
+      padding: 10px 0;
+      @include d-grid(1rem, center);
+      word-break: break-all;
+      line-height: 1.3;
+      &:not(:last-child) {
+         border-bottom: 1px solid #727375;
+      }
+      &:last-child {
+         padding-bottom: 0;
+      }
+   }
+   .delete {
+      width: 30px;
+      height: 30px;
+      justify-self: end;
+      @include d-flex(center, center);
+      background-color: $dangerColor;
+      transition: 0.3s ease-in;
+      cursor: pointer;
+      color: white;
+      &:hover {
+         background-color: rgb(212, 30, 30);
+      }
+   }
+}
