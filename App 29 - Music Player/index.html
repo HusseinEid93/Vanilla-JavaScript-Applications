@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- Font Awesome  -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      />
+      <!-- Custom stylesheet -->
+      <link rel="stylesheet" href="./css/index.css" />
+      <title>Music Player</title>
+   </head>
+
+   <body>
+      <div class="container">
+         <div class="container__info">
+            <h4 class="container__title">ukulele</h4>
+            <div class="container__progress-bar">
+               <div class="container__progress"></div>
+            </div>
+         </div>
+
+         <div class="container__img">
+            <img src="./images/ukulele.jpg" id="cover" />
+         </div>
+
+         <div class="container__navigation">
+            <button id="previous" class="container__btn">
+               <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="container__btn container__btn--big">
+               <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="container__btn">
+               <i class="fas fa-forward"></i>
+            </button>
+         </div>
+      </div>
+
+      <audio src="./music/ukulele.mp3" type="audio/mpeg" id="audio"></audio>
+
+      <script src="./scripts/index.js" type="module"></script>
+   </body>
+</html>
